@@ -1,5 +1,5 @@
 function Drawer({ onClose, onRemove, cartSneakers = [] }) {
-  console.log(cartSneakers);
+  const totalPrice = cartSneakers.reduce((sum, obj) => obj.price + sum, 0);
   return (
     <div className="overlay">
       <div className="drawer">
@@ -37,15 +37,18 @@ function Drawer({ onClose, onRemove, cartSneakers = [] }) {
             <li className="d-flex">
               <span>Итого:</span>
               <div></div>
-              <b>21 498 руб.</b>
+              <b>{totalPrice} руб.</b>
             </li>
             <li className="d-flex">
               <span>Налог 5%:</span>
               <div></div>
-              <b>1074 руб.</b>
+              <b>{totalPrice * 0.05} руб.</b>
             </li>
           </ul>
-          <button className="greenButton">
+          <button
+            className="greenButton"
+            onClick={() => alert("Ваш заказ оформлен!")}
+          >
             Оформить заказ
             <img src="/img/arrow.svg" alt="Arrow"></img>
           </button>

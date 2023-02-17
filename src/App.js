@@ -78,7 +78,10 @@ function App() {
           onRemove={onRemoveSneakers}
         />
       )}
-      <Header onClickCart={() => setCartOpened(true)} />
+      <Header
+        onClickCart={() => setCartOpened(true)}
+        cartSneakers={cartSneakers}
+      />
       <Routes>
         <Route
           path="/"

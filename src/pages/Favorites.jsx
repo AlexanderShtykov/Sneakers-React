@@ -20,7 +20,6 @@ function Favorites({ favorites, onAddToFavorite }) {
               onFavorite={(obj) => onAddToFavorite(obj)}
             />
           ))}
-        {/* //onFavorite={() => onAddToFavorite(favorites.id)}/>))} */}
       </div>
     </div>
   );
